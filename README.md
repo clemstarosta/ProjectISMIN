@@ -1,36 +1,71 @@
+Clémence Starosta & Héloise Bellahcene
+
+# **Web & android development project - Web part**
+# Famous women in Paris - Portraits - Paris Data
+
+## This project contains the following files
+
 - A `Woman` interface containing 7 string attributes:
-  - `name`
-  - `category`
-  - `desc1`
-  - `desc2`
-  - `desc3`
-  - `desc4`
-  - `desc5`
--  A `WomenList` class that internally store women and have the following public functions:
+  - `name` (string)
+  - `category` (string)
+  - `desc1` (string)
+  - `desc2` (string)
+  - `desc3` (string)
+  - `desc4` (string)
+  - `desc5` (string)
+
+A `ApiWoman`interface containing 7 string attributes:
+  - `name` (string)
+  - `category` (string)
+  - `desc1` (string)
+  - `desc2` (string)
+  - `desc3` (string)
+  - `desc4` (string)
+  - `desc5` (string)
+
+A `main` contains the bootstrap of the application with :
+  - The module to start 
+  - The port that the server will listen : port 8080
+
+A `woman.controller` receives and processes requests
+  - `Get `  provide all women
+  - ` Post - createWoman` Adding a new woman to the API
+  - ` Get - WomanByName` Return a woman according to her name
+  - ` Get - getWomanDescr` Return a descrpition of a woman using her name
+  - ` Delete - DeleteWoman` Delete a woman by her name
+
+A `woman.service` classes containing
+  -` async loadWomenFromAPI()` Loads all women from the API
   - `addWoman(woman: Woman)`
   - `getWoman(name: string)` returning a `Woman`
   - `getDescriptionOf(name: string)` returning an array of `Description`s
   - `getAllWomen()` returning an array of `Woman`s
   - `getTotalNumberOfWomen()` returning a number
+  - `removeWoman(name: string)`
 
+A `woman.module` Links all Nest components
 
+A `womanDTO` classes with the woman constructor
 
-## 🚀 Getting Started
+##  Getting Started
 
-Open a terminal, go to the directory of this TP and run the following commands:
+Open a terminal, go to the directory and run the following commands:
 
 ```sh
 # This will install all needed dependencies
 npm install
 
-# This will run the tests once
-npm run test
-
-OR
-
-# This will run the tests everytime a change is made in the source code
-npm run test:watch
-
 # This will build the source and put the transpiled code in `/dist` directory
 npm run build
+
+# This will start the API 
+npm run start:dev
 ```
+
+## For the API
+
+```
+# Links for see requests 
+
+
+ ```
