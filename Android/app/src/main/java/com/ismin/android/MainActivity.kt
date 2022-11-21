@@ -3,31 +3,47 @@ package com.ismin.android
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+
+const val SERVER_BASE_URL = "https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io"
 
 class MainActivity : AppCompatActivity(), WomanCreator {
 
     private val womenList = WomenList()
     private val btnCreateWoman: FloatingActionButton by lazy { findViewById(R.id.a_main_btn_create_woman) }
 
+    private val retrofit = Retrofit.Builder()
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl(SERVER_BASE_URL)
+        .build()
+
+    private val womanService = retrofit.create(WomanService::class.java)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val woman = Woman("Simone Signoret", "77 Illustres Parisiennes", "15 place Dauphine", "Auteure et actrice française Simone Signoret tourne avec les plus grands.",
-            "Elle est la seconde actrice française à recevoir l'oscar de la meilleure actrice en 1960, puis le César de la meilleure actrice en 1977.",
-            "Populaire auprès des français, elle tiendra de nombreux rôles tout au long de sa carrière et n'hésitera pas à affirmer ses idées politiques en signant par exemple le Manifeste des 121 en 1960, déclaration sur le droit à l'insoumission dans la guerre d'Algérie.",
-            "Mariée à Yves Montand ils passeront une partie de leur vie dans l'ancienne librairie à la Roulotte au 15 place Dauphine.",
-            "Tous deux reposent aujourd'hui au Père-Lachaise.")
-        womenList.addWoman(woman)
-        val anotherWoman = Woman("Nikki de St Phalle", "Artistes", "Fontaine Stravinksy",
-            "Artiste peintre, plasticienne et sculptrice franco-américaine Nikki de St Phalle est membre du groupe des Nouveaux réalistes.",
-            "Elle devient mondialement connue avec ses tableaux de la collection 'Tir', série de tableaux en peinture et plâtre réalisée dans les années 60 .",
-            "En 1971 elle se marie avec Jean Tinguely et réalise avec lui la Fontaine Stravinsky créée dans le cadre de la construction du Centre Pompidou.",
-            "",
-            "")
-        womenList.addWoman(anotherWoman)
+        womanService.getAllWomen()
+            .enqueue(object : Callback<List<Woman>> {
+                override fun onResponse(
+                    call: Call<List<Woman>>,
+                    response: Response<List<Woman>>
+                ) {
+                    val allWomen: List<Woman>? = response.body()
+                    allWomen?.forEach {womenList.addWoman(it)}
+                }
+
+                override fun onFailure(call: Call<List<Woman>>, t: Throwable) {
+                    Toast.makeText(applicationContext, "It fails with error", Toast.LENGTH_SHORT).show()
+                }
+            })
 
         displayWomanListFragment()
 
@@ -71,7 +87,19 @@ class MainActivity : AppCompatActivity(), WomanCreator {
     }
 
     override fun onWomanCreated(woman: Woman) {
-        womenList.addWoman(woman)
-        displayWomanListFragment()
+        womanService.addWoman(woman)
+            .enqueue(object : Callback<Woman> {
+                override fun onResponse(
+                    call: Call<Woman>,
+                    response: Response<Woman>
+                ) {
+                    response.body()?.let {womenList.addWoman(it)}
+                    displayWomanListFragment()
+                }
+
+                override fun onFailure(call: Call<Woman>, t: Throwable) {
+                    Toast.makeText(applicationContext, "It fails with error", Toast.LENGTH_SHORT).show()
+                }
+            })
     }
 }

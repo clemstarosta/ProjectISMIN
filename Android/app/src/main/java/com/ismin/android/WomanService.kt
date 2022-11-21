@@ -10,5 +10,5 @@ interface WomanService {
     fun getAllWomen(): Call<List<Woman>>
 
     @POST("women")
-    fun createWoman(@Body() woman: Woman): Call<Woman>
+    fun addWoman(@Body() woman: Woman): Call<Woman>
 }
