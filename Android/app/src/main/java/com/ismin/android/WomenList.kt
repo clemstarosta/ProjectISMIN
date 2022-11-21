@@ -2,7 +2,7 @@ package com.ismin.android
 
 import java.lang.RuntimeException
 
-class womanList {
+class WomenList {
 
     private val women: HashMap<String, Woman> = HashMap();
 

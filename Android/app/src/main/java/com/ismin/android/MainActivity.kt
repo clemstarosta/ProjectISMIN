@@ -8,7 +8,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity(), WomanCreator {
 
-    private val womanList = womanList()
+    private val womenList = WomenList()
     private val btnCreateWoman: FloatingActionButton by lazy { findViewById(R.id.a_main_btn_create_woman) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,14 +20,14 @@ class MainActivity : AppCompatActivity(), WomanCreator {
             "Populaire auprès des français, elle tiendra de nombreux rôles tout au long de sa carrière et n'hésitera pas à affirmer ses idées politiques en signant par exemple le Manifeste des 121 en 1960, déclaration sur le droit à l'insoumission dans la guerre d'Algérie.",
             "Mariée à Yves Montand ils passeront une partie de leur vie dans l'ancienne librairie à la Roulotte au 15 place Dauphine.",
             "Tous deux reposent aujourd'hui au Père-Lachaise.")
-        womanList.addWoman(woman)
+        womenList.addWoman(woman)
         val anotherWoman = Woman("Nikki de St Phalle", "Artistes", "Fontaine Stravinksy",
             "Artiste peintre, plasticienne et sculptrice franco-américaine Nikki de St Phalle est membre du groupe des Nouveaux réalistes.",
             "Elle devient mondialement connue avec ses tableaux de la collection 'Tir', série de tableaux en peinture et plâtre réalisée dans les années 60 .",
             "En 1971 elle se marie avec Jean Tinguely et réalise avec lui la Fontaine Stravinsky créée dans le cadre de la construction du Centre Pompidou.",
             "",
             "")
-        womanList.addWoman(anotherWoman)
+        womenList.addWoman(anotherWoman)
 
         displayWomanListFragment()
 
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), WomanCreator {
     }
 
     private fun displayWomanListFragment() {
-        val womanListFragment = WomanListFragment.newInstance(womanList.getAllWomen())
+        val womanListFragment = WomanListFragment.newInstance(womenList.getAllWomen())
         supportFragmentManager.beginTransaction()
             .replace(R.id.a_main_frame_layout, womanListFragment)
             .commit()
@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity(), WomanCreator {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_clean -> {
-                womanList.clean()
+                womenList.clean()
                 displayWomanListFragment()
                 true
             }
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity(), WomanCreator {
     }
 
     override fun onWomanCreated(woman: Woman) {
-        womanList.addWoman(woman)
+        womenList.addWoman(woman)
         displayWomanListFragment()
     }
 }
