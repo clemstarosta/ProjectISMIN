@@ -3,6 +3,7 @@ Clémence Starosta & Héloise Bellahcene
 # **Web & android development project - Web part**
 # Famous women in Paris - Portraits - Paris Data
 
+#### This projet is deploy on Clever Cloud in 'ISMIN CS' - 'Women - CSHB'
 ## This project contains the following files
 
 - A `Woman` interface containing 7 string attributes:
@@ -58,14 +59,23 @@ npm install
 # This will build the source and put the transpiled code in `/dist` directory
 npm run build
 
+# This will committed the project
+git add .
+git commit -m "new"
+
+# This will added new features to clever cloud
+git push clever main:master
+
 # This will start the API 
 npm run start:dev
 ```
 
 ## For the API
 
-```
-# Links for see requests 
-
+```sh
+# Example of request
+   - See all women : `https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io/women`
+   - See information about Chana Orloff: ` https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io/women/Chana%20Orloff`
+   - See all descriptions of  Chana Orloff: `https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io/women/Chana%20Orloff/desc` 
 
  ```
