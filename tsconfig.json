@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "compilerOptions": {
     "module": "commonjs",
@@ -13,20 +12,4 @@
     "baseUrl": ".",
     "incremental": true,
   }
-=======
-{
-  "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "incremental": true,
-  }
->>>>>>> e6a0a41c5764b98de37fe97fdc46d2705877d336
 }
