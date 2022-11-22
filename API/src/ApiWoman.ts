@@ -7,4 +7,8 @@ export interface ApiWoman{
     desc5: string;
     place: string;
     category : string;
+    long: number;
+    lat: number;
+    thumb_url: string;
+
 }

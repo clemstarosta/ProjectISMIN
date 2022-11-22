@@ -35,6 +35,9 @@ export class WomanService {
               desc5: e.desc5,
               place: e.place,
               category : e.category,
+              long : e.long,
+              lat: e.lat,
+              thumb_url: e.thumb_url,
             });
           });
         }),
