@@ -1,11 +1,11 @@
 # ProjectISMIN
 # Web and Android project developpement 
-# ** Famous women in Paris - Portraits - Paris Data **
+# **Famous women in Paris - Portraits - Paris Data**
 
-** In API folder **
+**In API folder**
 API creation and web development
 
-** In Android folder **
+**In Android folder**
 Creation of the android application 
 
 
