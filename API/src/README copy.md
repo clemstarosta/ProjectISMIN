@@ -74,8 +74,8 @@ npm run start:dev
 
 ```sh
 # Example of request
-   - See all women : `https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io/women`
-   - See information about Chana Orloff: ` https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io/women/Chana%20Orloff`
-   - See all descriptions of  Chana Orloff: `https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io/women/Chana%20Orloff/desc` 
+   - See all women : `https://app-e57a2b06-3f06-4d00-842d-a8400fbbf516.cleverapps.io/women`
+   - See information about Chana Orloff: ` https://app-e57a2b06-3f06-4d00-842d-a8400fbbf516.cleverapps.io/women/Chana%20Orloff`
+   - See all descriptions of  Chana Orloff: `https://app-e57a2b06-3f06-4d00-842d-a8400fbbf516.cleverapps.io/women/Chana%20Orloff/desc` 
 
  ```

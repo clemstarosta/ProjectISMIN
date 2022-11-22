@@ -27,6 +27,8 @@ export class WomanService {
         tap((ApiWoman) => {
           ApiWoman.forEach(e=> {
             return this.storedWomen.push({
+              lat: e.lat,
+              long : e.long,
               name : e.name,
               desc1: e.desc1,
               desc2: e.desc2,
@@ -35,8 +37,6 @@ export class WomanService {
               desc5: e.desc5,
               place: e.place,
               category : e.category,
-              long : e.long,
-              lat: e.lat,
               thumb_url: e.thumb_url,
             });
           });
