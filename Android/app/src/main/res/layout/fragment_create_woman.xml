@@ -11,7 +11,7 @@
         android:id="@+id/f_create_woman_edt_desc5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/desc5"
         android:importantForAutofill="no"
@@ -24,10 +24,52 @@
         app:layout_constraintTop_toBottomOf="@+id/f_create_woman_edt_desc4" />
 
     <EditText
+        android:id="@+id/f_create_woman_edt_lat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/lat"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintEnd_toEndOf="@+id/f_create_woman_edt_desc5"
+        app:layout_constraintStart_toStartOf="@+id/f_create_woman_edt_desc5"
+        app:layout_constraintTop_toBottomOf="@+id/f_create_woman_edt_desc5" />
+
+    <EditText
+        android:id="@+id/f_create_woman_edt_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/longe"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintEnd_toEndOf="@+id/f_create_woman_edt_lat"
+        app:layout_constraintStart_toStartOf="@+id/f_create_woman_edt_lat"
+        app:layout_constraintTop_toBottomOf="@+id/f_create_woman_edt_lat" />
+
+    <EditText
+        android:id="@+id/f_create_woman_edt_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/url"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="#546E7A"
+        app:layout_constraintEnd_toEndOf="@+id/f_create_woman_edt_long"
+        app:layout_constraintStart_toStartOf="@+id/f_create_woman_edt_long"
+        app:layout_constraintTop_toBottomOf="@+id/f_create_woman_edt_long" />
+
+    <EditText
         android:id="@+id/f_create_woman_edt_desc4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/desc4"
         android:importantForAutofill="no"
@@ -43,7 +85,7 @@
         android:id="@+id/f_create_woman_edt_desc3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/desc3"
         android:importantForAutofill="no"
@@ -102,7 +144,7 @@
         android:id="@+id/f_create_woman_edt_desc2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/desc2"
         android:importantForAutofill="no"
@@ -136,9 +178,9 @@
         android:layout_height="48dp"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/f_create_woman_edt_desc5"
-        app:layout_constraintStart_toStartOf="@+id/f_create_woman_edt_desc5"
+        app:layout_constraintEnd_toEndOf="@+id/f_create_woman_edt_url"
+        app:layout_constraintStart_toStartOf="@+id/f_create_woman_edt_url"
         app:layout_constraintTop_toBottomOf="@+id/f_create_woman_edt_place"
-        app:layout_constraintVertical_bias="0.806" />
+        app:layout_constraintVertical_bias="0.968" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
