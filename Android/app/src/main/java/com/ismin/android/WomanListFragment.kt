@@ -1,52 +1,37 @@
 package com.ismin.android
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import java.lang.RuntimeException
 
-private const val WOMEN = "women"
+class WomenList {
 
-class WomanListFragment : Fragment() {
-    private lateinit var womanAdapter: WomanAdapter
-    private lateinit var rcvWomen: RecyclerView
-    private var women: ArrayList<Woman> = arrayListOf()
+    private val women: HashMap<String, Woman> = HashMap();
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            women = it.getSerializable(WOMEN) as ArrayList<Woman>
-        }
+    fun addWoman(woman: Woman) {
+        women[woman.name] = woman;
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val rootView = inflater.inflate(R.layout.fragment_woman_list, container, false)
-
-        womanAdapter = WomanAdapter(women)
-
-        rcvWomen = rootView.findViewById(R.id.f_woman_list_rcv_women)
-        rcvWomen.adapter =  womanAdapter
-
-        val linearLayoutManager = LinearLayoutManager(context)
-        rcvWomen.layoutManager = linearLayoutManager
-
-        return rootView
+    fun getWoman(name: String): Woman {
+        return women[name] ?: throw RuntimeException("No woman with name: $name");
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(women: ArrayList<Woman>) =
-            WomanListFragment().apply {
-                arguments = Bundle().apply {
-                    putSerializable(WOMEN, women)
-                }
-            }
+    fun getAllWomen(): ArrayList<Woman> {
+        return ArrayList(women.values.sortedBy { it.name })
     }
+
+    fun getDescriptionOf(name: String): List<Woman> {
+        return women.filterValues { it.name.equals(name, ignoreCase = true) }
+            .values
+            .sortedBy { it.name }
+            .toList();
+    }
+
+    fun getTotalNumberOfWomen(): Int {
+        return women.size;
+    }
+
+    fun clean() {
+        women.clear();
+    }
+
+
 }

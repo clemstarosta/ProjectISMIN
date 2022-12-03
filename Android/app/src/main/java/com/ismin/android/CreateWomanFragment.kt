@@ -22,6 +22,9 @@ class CreateWomanFragment : Fragment() {
     lateinit var edtDesc3: EditText
     lateinit var edtDesc4: EditText
     lateinit var edtDesc5: EditText
+    lateinit var edtLat: EditText
+    lateinit var edtLong: EditText
+    lateinit var edtURL: EditText
     lateinit var btnSave: Button
 
     @SuppressLint("MissingInflatedId")
@@ -39,19 +42,26 @@ class CreateWomanFragment : Fragment() {
         edtDesc3 = rootView.findViewById(R.id.f_create_woman_edt_desc3)
         edtDesc4 = rootView.findViewById(R.id.f_create_woman_edt_desc4)
         edtDesc5 = rootView.findViewById(R.id.f_create_woman_edt_desc5)
+        edtLat = rootView.findViewById(R.id.f_create_woman_edt_lat)
+        edtLong = rootView.findViewById(R.id.f_create_woman_edt_long)
+        edtURL = rootView.findViewById(R.id.f_create_woman_edt_url)
 
         btnSave = rootView.findViewById(R.id.f_create_woman_btn_save)
 
         btnSave.setOnClickListener {
             val name = edtName.text.toString()
-            val category = edtCategory.text.toString()
-            val place = edtPlace.text.toString()
             val desc1 = edtDesc1.text.toString()
             val desc2 = edtDesc2.text.toString()
             val desc3 = edtDesc3.text.toString()
             val desc4 = edtDesc4.text.toString()
             val desc5 = edtDesc5.text.toString()
-            val woman = Woman(name, category, place, desc1,desc2,desc3,desc4,desc5)
+            val place = edtPlace.text.toString()
+            val category = edtCategory.text.toString()
+            val long = edtLong.text.toString().toInt()
+            val lat = edtLat.text.toString().toInt()
+            val url = edtURL.text.toString()
+
+            val woman = Woman(name, desc1,desc2,desc3,desc4,desc5,place,category, long, lat, url)
             listener?.onWomanCreated(woman)
         }
 
