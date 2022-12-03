@@ -8,6 +8,9 @@
     <string name="desc3">Description3</string>
     <string name="desc4">Description4</string>
     <string name="desc5">Description5</string>
+    <string name="lat">Latitude</string>
+    <string name="longe">Longitude</string>
+    <string name="url">URL</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="save">Save</string>

@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 
 export class WomanDto {
   @IsNotEmpty()
@@ -33,7 +33,22 @@ export class WomanDto {
   @IsString()
   readonly desc5: string;
 
-  constructor(name: string, category: string, place: string, desc1: string, desc2: string, desc3: string, desc4: string, desc5: string) {
+  @IsNotEmpty()
+  @IsNumber()
+  readonly long: number;
+
+  @IsNotEmpty()
+  @IsNumber()
+  readonly lat: number;
+
+  @IsNotEmpty()
+  @IsString()
+  readonly thumb_url : string;
+
+
+
+  constructor(name: string, category: string, place: string, desc1: string, desc2: string, desc3: string, desc4: string, desc5: string, 
+    long: number, lat: number, thumb_url: string) {
     this.name = name;
     this.category = category;
     this.place = place;
@@ -42,5 +57,8 @@ export class WomanDto {
     this.desc3 = desc3;
     this.desc4 = desc4;
     this.desc5 = desc5;
+    this.long=long;
+    this.lat=lat;
+    this.thumb_url = thumb_url;
   }
 }
