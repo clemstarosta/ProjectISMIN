@@ -7,4 +7,7 @@ export interface Woman {
   desc3: string;
   desc4: string;
   desc5: string;
+  long: string;
+  lat: string;
+  image: string;
 }
