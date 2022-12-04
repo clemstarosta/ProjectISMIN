@@ -1,3 +1,4 @@
+/*
 package com.ismin.android
 
 import android.annotation.SuppressLint
@@ -185,3 +186,5 @@ override fun onBookCreated(book: Book) {
 
 }
 }
+
+ */
