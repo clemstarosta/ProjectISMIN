@@ -12,7 +12,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val SERVER_BASE_URL = "https://app-0e186a35-b187-42f9-8331-300c0017c6f9.cleverapps.io"
+const val SERVER_BASE_URL = "https://app-e57a2b06-3f06-4d00-842d-a8400fbbf516.cleverapps.io"
 
 class MainActivity : AppCompatActivity(), WomanCreator {
 
