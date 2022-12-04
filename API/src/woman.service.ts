@@ -29,14 +29,14 @@ export class WomanService {
             return this.storedWomen.push({
               lat: e.lat,
               long : e.long,
-              name : e.name,
+              name: e.name,
               desc1: e.desc1,
               desc2: e.desc2,
               desc3: e.desc3,
               desc4: e.desc4,
               desc5: e.desc5,
               place: e.place,
-              category : e.category,
+              category: e.category,
               thumb_url: e.thumb_url,
             });
           });

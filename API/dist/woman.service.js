@@ -28,6 +28,8 @@ let WomanService = class WomanService {
             .pipe((0, rxjs_1.map)((resp) => resp.data), (0, rxjs_1.tap)((ApiWoman) => {
             ApiWoman.forEach(e => {
                 return this.storedWomen.push({
+                    lat: e.lat,
+                    long: e.long,
                     name: e.name,
                     desc1: e.desc1,
                     desc2: e.desc2,
@@ -36,6 +38,7 @@ let WomanService = class WomanService {
                     desc5: e.desc5,
                     place: e.place,
                     category: e.category,
+                    thumb_url: e.thumb_url,
                 });
             });
         }))

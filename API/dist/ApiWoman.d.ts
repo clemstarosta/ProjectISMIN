@@ -1,4 +1,6 @@
 export interface ApiWoman {
+    lat: number;
+    long: number;
     name: string;
     desc1: string;
     desc2: string;
@@ -7,4 +9,5 @@ export interface ApiWoman {
     desc5: string;
     place: string;
     category: string;
+    thumb_url: string;
 }

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WomanDto = void 0;
 const class_validator_1 = require("class-validator");
 class WomanDto {
-    constructor(name, category, place, desc1, desc2, desc3, desc4, desc5) {
+    constructor(name, category, place, desc1, desc2, desc3, desc4, desc5, long, lat, thumb_url) {
         this.name = name;
         this.category = category;
         this.place = place;
@@ -21,6 +21,9 @@ class WomanDto {
         this.desc3 = desc3;
         this.desc4 = desc4;
         this.desc5 = desc5;
+        this.long = long;
+        this.lat = lat;
+        this.thumb_url = thumb_url;
     }
 }
 __decorate([
@@ -63,5 +66,20 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], WomanDto.prototype, "desc5", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], WomanDto.prototype, "long", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], WomanDto.prototype, "lat", void 0);
+__decorate([
+    (0, class_validator_1.IsNotEmpty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], WomanDto.prototype, "thumb_url", void 0);
 exports.WomanDto = WomanDto;
 //# sourceMappingURL=WomanDto.js.map
