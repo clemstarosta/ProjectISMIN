@@ -1,11 +1,8 @@
-package com.example.app
+package com.ismin.android
 
 /**
  * Receive callbacks from the listFragment
  */
 interface ListCallBack {
-    fun onFavorite(id: Int, fav: Boolean)
-    fun onDetails(id: Int, position : Int)
-    fun onSearch(search: String)
-    fun onLeaveSearch()
+    fun onMoreDetail(woman: Woman)
 }

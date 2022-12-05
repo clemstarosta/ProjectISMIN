@@ -29,6 +29,11 @@ class WomenList {
         return women.size;
     }
 
+    fun setFavorite(name: String, fav: Boolean) {
+        women[name]?.fav = fav
+    }
+
+
     fun clean() {
         women.clear();
     }

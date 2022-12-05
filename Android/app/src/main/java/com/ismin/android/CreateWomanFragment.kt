@@ -10,6 +10,11 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 
+/**
+ * CreateWomanFragment
+ * Gestion du fragment de création de la femme
+ */
+
 
 class CreateWomanFragment : Fragment() {
 
@@ -61,7 +66,7 @@ class CreateWomanFragment : Fragment() {
             val lat = edtLat.text.toString().toInt()
             val url = edtURL.text.toString()
 
-            val woman = Woman(name, desc1,desc2,desc3,desc4,desc5,place,category, long, lat, url)
+            val woman = Woman(name, desc1,desc2,desc3,desc4,desc5,place,category, long, lat, url,false)
             listener?.onWomanCreated(woman)
         }
 

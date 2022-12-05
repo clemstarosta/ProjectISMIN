@@ -1,13 +1,16 @@
 package com.ismin.android
 
+/**
+ * Main activity
+ */
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -20,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 const val SERVER_BASE_URL = "https://app-e57a2b06-3f06-4d00-842d-a8400fbbf516.cleverapps.io"
 
-class MainActivity : AppCompatActivity(), WomanCreator {
+class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack{
 
     private val womenList = WomenList()
     private val btnCreateWoman: FloatingActionButton by lazy { findViewById(R.id.a_main_btn_create_woman) }
@@ -37,7 +40,13 @@ class MainActivity : AppCompatActivity(), WomanCreator {
 
     private val womanService = retrofit.create(WomanService::class.java)
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        /**
+         * onCreate
+         * Creation of the main window with display of the list of women
+         */
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         womanService.getAllWomen()
@@ -47,8 +56,8 @@ class MainActivity : AppCompatActivity(), WomanCreator {
                     response: Response<List<Woman>>
                 ) {
                     val allWomen: List<Woman>? = response.body()
-                    allWomen?.forEach { womenList.addWoman(it) }
-                    //displayWomenListFragment()
+                    allWomen?.forEach { womenList.addWoman(it)
+                    womenList.setFavorite(it.name,false)}
                     displayFragments()
                 }
 
@@ -57,14 +66,12 @@ class MainActivity : AppCompatActivity(), WomanCreator {
                         .show()
                 }
             })
-        //displayWomenListFragment()
 
+        //CreatorActivity management
         val monIntent : Intent =  Intent(this,CreatorActivity::class.java)
 
         btnCreateWoman.setOnClickListener {
             startActivity(monIntent)
-            //displayCreateWomanFragment()
-
         }
     }
 
@@ -79,16 +86,17 @@ class MainActivity : AppCompatActivity(), WomanCreator {
             R.id.menu_clean -> {
                 womenList.clean()
                 displayWomenListFragment()
-                //displayFragments()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-
-
         private fun displayWomenListFragment() {
+            /**
+             * displayWomenListFragment
+             * Display via fragment of the list of women
+             */
             val womenListFragment = WomenListFragment.newInstance(womenList.getAllWomen())
             supportFragmentManager.beginTransaction()
                 .replace(R.id.a_main_frame_layout, womenListFragment)
@@ -97,18 +105,22 @@ class MainActivity : AppCompatActivity(), WomanCreator {
 
         }
 
+    override fun onMoreDetail(woman: Woman){
+        val monIntent : Intent =  Intent(this,InfoDetailActivity::class.java)
+        monIntent.putExtra("desc1", woman.desc1)
+        monIntent.putExtra("desc2", woman.desc2)
+        monIntent.putExtra("desc3", woman.desc3)
+        monIntent.putExtra("desc4", woman.desc4)
+        monIntent.putExtra("desc5", woman.desc5)
 
-
-    private fun displayCreateWomanFragment() {
-        val createWomanFragment = CreateWomanFragment.newInstance()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.a_main_frame_layout, createWomanFragment)
-            .commit()
-        btnCreateWoman.hide()
+        startActivity(monIntent)
     }
 
     override fun onWomanCreated(woman: Woman) {
-
+        /**
+         * onWomanCreated
+         * Woman creation
+         */
         womanService.addWoman(woman)
             .enqueue(object : Callback<Woman> {
                 override fun onResponse(
@@ -123,20 +135,25 @@ class MainActivity : AppCompatActivity(), WomanCreator {
                     Toast.makeText(applicationContext, "It fails with error", Toast.LENGTH_SHORT).show()
                 }
             })
-
     }
 
 
-
-    fun displayFragments(position : Int = 1){
+    fun displayFragments(index : Int = 1){
+        /**
+         * displayFragments
+         * Fragment management in the correct menu
+         * index 0 = DETAIL
+         * index 1 = WOMEN IN PARIS
+         * index 2 = MAP
+         */
         tabLayout = findViewById(R.id.tab_layout)
         viewPager2 = findViewById(R.id.view_pager2)
 
         myViewPagerAdapter = ViewMenuAdapter(this, womenList.getAllWomen())
         viewPager2.adapter = myViewPagerAdapter
 
-        viewPager2.currentItem = position
-        tabLayout.selectTab(tabLayout.getTabAt(position))
+        viewPager2.currentItem = index
+        tabLayout.selectTab(tabLayout.getTabAt(index))
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -151,9 +168,9 @@ class MainActivity : AppCompatActivity(), WomanCreator {
             }
         })
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                viewPager2.isUserInputEnabled = position != 2
-                tabLayout.selectTab(tabLayout.getTabAt(position))
+            override fun onPageSelected(index: Int) {
+                viewPager2.isUserInputEnabled = index != 2
+                tabLayout.selectTab(tabLayout.getTabAt(index))
             }
         })
     }

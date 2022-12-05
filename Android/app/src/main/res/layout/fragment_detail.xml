@@ -13,6 +13,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Description : Description de la vie de la femme"
+        android:textColor="#070707"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -23,6 +24,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:text="Catégorie : Artistes, comédienne...."
+        android:textColor="#050505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -33,6 +35,7 @@
         android:layout_marginTop="16dp"
         android:text="Famous women in Paris"
         android:textAlignment="center"
+        android:textColor="#090909"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,12 +44,13 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="373dp"
-        android:layout_height="62dp"
+        android:layout_width="383dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:text="Famous women in Paris vous indique les femmes influentes et illustres à Paris. Pour chaque femme vous aurez une brève description de sa vie ainsi que l'addresse des lieux emblématiques de leur vie."
         android:textAlignment="center"
+        android:textColor="#070707"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -56,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="172dp"
         android:text="Donnée"
+        android:textColor="#050505"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,12 +72,13 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
-        android:text="Autheurs"
+        android:layout_marginTop="164dp"
+        android:text="Auteurs"
+        android:textColor="#0C0C0C"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -80,8 +86,9 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="100dp"
         android:text="Source"
+        android:textColor="#0B0B0B"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,8 +101,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="208dp"
         android:text="Nom : Nom et Prénom de la femme"
+        android:textColor="#090909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -104,8 +112,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="404dp"
         android:text="Clémence Starosta"
+        android:textColor="#0B0B0B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -114,8 +123,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="464dp"
+        android:layout_marginTop="444dp"
         android:text="Héloise Bellahcene"
+        android:textColor="#090909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -124,8 +134,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="544dp"
+        android:layout_marginTop="532dp"
         android:text="@string/paris_data_femme_illustres_paris_portrait"
+        android:textColor="#090909"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,6 +147,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="12dp"
         android:text="Adresse : lieu emblématique de vie de la femme"
+        android:textColor="#0B0A0A"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

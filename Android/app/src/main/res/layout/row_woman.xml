@@ -10,8 +10,8 @@
         android:id="@+id/r_woman_txv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="48dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintStart_toEndOf="@+id/r_woman_txv_image"
@@ -28,61 +28,15 @@
         app:layout_constraintTop_toBottomOf="@+id/r_woman_txv_name" />
 
     <TextView
-        android:id="@+id/r_woman_txv_desc1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toStartOf="@+id/r_woman_txv_image"
-        app:layout_constraintTop_toBottomOf="@+id/r_woman_txv_image" />
-
-    <TextView
-        android:id="@+id/r_woman_txv_desc2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toStartOf="@+id/r_woman_txv_desc1"
-        app:layout_constraintTop_toBottomOf="@+id/r_woman_txv_desc1" />
-
-    <TextView
-        android:id="@+id/r_woman_txv_desc3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toStartOf="@+id/r_woman_txv_desc2"
-        app:layout_constraintTop_toBottomOf="@+id/r_woman_txv_desc2" />
-
-    <TextView
-        android:id="@+id/r_woman_txv_desc4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toStartOf="@+id/r_woman_txv_desc3"
-        app:layout_constraintTop_toBottomOf="@+id/r_woman_txv_desc3" />
-
-    <TextView
-        android:id="@+id/r_woman_txv_desc5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toStartOf="@+id/r_woman_txv_desc4"
-        app:layout_constraintTop_toBottomOf="@+id/r_woman_txv_desc4" />
-
-    <TextView
         android:id="@+id/r_woman_txv_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="248dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/r_woman_txv_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -92,4 +46,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/r_women_fav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r_woman_txv_place"
+        app:srcCompat="@drawable/fav_off_24" />
+
+    <ImageView
+        android:id="@+id/r_women_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r_women_fav"
+        app:srcCompat="@drawable/ic_baseline_read_more_24" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

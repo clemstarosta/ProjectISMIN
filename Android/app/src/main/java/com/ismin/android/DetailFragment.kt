@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.ismin.android.R
 
 /**
- * Fragment that displays information about the app.
+ * Fragment that displays the details and info of the application
  */
 class DetailFragment : Fragment() {
 

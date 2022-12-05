@@ -1,13 +1,9 @@
 Clémence Starosta & Héloise Bellahcene
 
-# **Web & android development project - Android part**
+# **Web & android development project - Web part**
 # Famous women in Paris - Portraits - Paris Data
 
-#TO WRITE
+##  Getting Started
 
-# Commit or revert your local changes
-# git add . && git commit -m "YOUR_MSG"
 
-# Update your repository
-# git pull
 

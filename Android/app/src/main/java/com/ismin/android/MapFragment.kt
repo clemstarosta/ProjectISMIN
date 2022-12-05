@@ -9,7 +9,7 @@ import com.ismin.android.R
 
 
 /**
- * Fragment that displays information about the app.
+ * Fragment that displays information about the map.
  */
 class MapFragment : Fragment() {
 
@@ -17,9 +17,8 @@ class MapFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        var rootView : View = inflater.inflate(R.layout.fragment_map, container, false)
 
+        var rootView : View = inflater.inflate(R.layout.fragment_map, container, false)
         return rootView
     }
     companion object {
