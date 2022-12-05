@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Android App</string>
+    <string name="app_name">Famous Women in Paris</string>
     <string name="place">Place</string>
     <string name="name">Name</string>
     <string name="category">Category</string>
@@ -11,7 +11,12 @@
     <string name="lat">Latitude</string>
     <string name="longe">Longitude</string>
     <string name="url">URL</string>
+    <string name="button">Create Woman</string>
+    <string name="linktodata">
+        <a href="https://data.iledefrance.fr/explore/dataset/prix-des-carburants-j-7/information/">Stations essence France</a>
+    </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="save">Save</string>
+    <string name="paris_data_femme_illustres_paris_portrait">Paris Data - Femme illustres à Paris - Portrait</string>
 </resources>

@@ -2,7 +2,9 @@ package com.ismin.android
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class WomanAdapter(private var women: List<Woman>) : RecyclerView.Adapter<WomanViewHolder>() {
 
@@ -24,9 +26,12 @@ class WomanAdapter(private var women: List<Woman>) : RecyclerView.Adapter<WomanV
         holder.desc5.text = woman.desc5
         holder.place.text = woman.place
         holder.category.text = woman.category
-        holder.long.text = woman.long.toString()
-        holder.lat.text = woman.lat.toString()
-        holder.thumb_url.text = woman.thumb_url
+
+        val img: ImageView = holder.image
+        Picasso.get()
+            .load(woman.thumb_url)
+            .into(img)
+
     }
 
     override fun getItemCount(): Int {

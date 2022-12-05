@@ -41,6 +41,7 @@ class WomenListFragment : Fragment() {
         return rootView
     }
 
+
     companion object {
         @JvmStatic
         fun newInstance(women: ArrayList<Woman>) =

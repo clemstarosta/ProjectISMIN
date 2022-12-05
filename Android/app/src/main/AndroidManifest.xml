@@ -10,6 +10,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".CreatorActivity"
+            android:exported="false"
+            android:label="Creator">
+        <meta-data
+            android:name="android.app.lib_name"
+            android:value="" />
+        </activity>
+
         <activity
             android:name="com.ismin.android.MainActivity"
             android:exported="true">
@@ -19,6 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
