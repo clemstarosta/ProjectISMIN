@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment
  * Gestion du fragment de création de la femme
  */
 
-
 class CreateWomanFragment : Fragment() {
 
     private var listener: WomanCreator? = null

@@ -3,14 +3,11 @@ package com.ismin.android
 /**
  * Main activity
  */
-import android.app.Activity
+
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 const val SERVER_BASE_URL = "https://app-e57a2b06-3f06-4d00-842d-a8400fbbf516.cleverapps.io"
 
-class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack{
+class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack {
 
     private val womenList = WomenList()
     private val btnCreateWoman: FloatingActionButton by lazy { findViewById(R.id.a_main_btn_create_woman) }
@@ -39,7 +36,6 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack{
         .build()
 
     private val womanService = retrofit.create(WomanService::class.java)
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -137,7 +133,6 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack{
             })
     }
 
-
     fun displayFragments(index : Int = 1){
         /**
          * displayFragments
@@ -174,10 +169,6 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack{
             }
         })
     }
-
-
-
-
 
 }
 
