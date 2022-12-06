@@ -169,9 +169,5 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack {
         })
     }
 
-    fun get(): WomenList {
-        return this.womenList;
-    }
-
 }
 
