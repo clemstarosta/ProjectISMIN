@@ -32,7 +32,7 @@ A `woman.controller` receives and processes requests
   - `Get `  provide all women
   - ` Post - createWoman` Adding a new woman to the API
   - ` Get - WomanByName` Return a woman according to her name
-  - ` Get - getWomanDescr` Return a descrpition of a woman using her name
+  - ` Get - getWomanDescr` Return a description of a woman using her name
   - ` Delete - DeleteWoman` Delete a woman by her name
 
 A `woman.service` classes containing

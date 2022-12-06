@@ -57,14 +57,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
-        println("Je suis là")
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
 
         for(woman in women){
-            println(woman.lat)
-            println(woman.lat.toDouble())
-            println(woman.long)
-            println(woman.long.toDouble())
 
             // Add a marker on the map
             val marker = LatLng(woman.lat.toDouble(), woman.long.toDouble())
@@ -73,7 +68,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
         }
         // Move the camera on the first marker
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(markers[0]))
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(markers[0]))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom (markers[0], 12.0F))
 
     }
 }
