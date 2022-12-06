@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack {
 
     private val womanService = retrofit.create(WomanService::class.java)
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         /**
          * onCreate
@@ -88,18 +87,18 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack {
         }
     }
 
-        private fun displayWomenListFragment() {
-            /**
-             * displayWomenListFragment
-             * Display via fragment of the list of women
-             */
-            val womenListFragment = WomenListFragment.newInstance(womenList.getAllWomen())
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.a_main_frame_layout, womenListFragment)
-                .commit()
-            btnCreateWoman.show()
+    private fun displayWomenListFragment() {
+        /**
+         * displayWomenListFragment
+         * Display via fragment of the list of women
+         */
+        val womenListFragment = WomenListFragment.newInstance(womenList.getAllWomen())
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.a_main_frame_layout, womenListFragment)
+            .commit()
+        btnCreateWoman.show()
 
-        }
+    }
 
     override fun onMoreDetail(woman: Woman){
         val monIntent : Intent =  Intent(this,InfoDetailActivity::class.java)
@@ -168,6 +167,10 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack {
                 tabLayout.selectTab(tabLayout.getTabAt(index))
             }
         })
+    }
+
+    fun get(): WomenList {
+        return this.womenList;
     }
 
 }

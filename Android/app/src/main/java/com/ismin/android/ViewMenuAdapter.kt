@@ -17,7 +17,7 @@ class ViewMenuAdapter(fragmentActivity: FragmentActivity, private var womenList:
         return when (index) {
             0 -> DetailFragment.newInstance()
             1 -> WomenListFragment.newInstance(womenList)
-            else -> {MapFragment.newInstance()}
+            else -> {MapFragment.newInstance(womenList)}
         }
     }
 

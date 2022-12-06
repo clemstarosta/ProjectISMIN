@@ -1,6 +1,7 @@
 package com.ismin.android
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,16 +13,28 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
+private const val WOMEN = "women"
+
 /**
  *
  */
 class MapFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    private var women: ArrayList<Woman> = arrayListOf()
+    private var markers = ArrayList<LatLng>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            women = it.getSerializable(WOMEN) as ArrayList<Woman>
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         // Inflate the layout for this fragment
         var rootView : View = inflater.inflate(R.layout.fragment_map, container, false)
@@ -34,15 +47,33 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     companion object {
         @JvmStatic
-        fun newInstance() = MapFragment()
+        fun newInstance(women: ArrayList<Woman>) =
+            MapFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable(WOMEN, women)
+                }
+            }
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        println("Je suis là")
+
+        for(woman in women){
+            println(woman.lat)
+            println(woman.lat.toDouble())
+            println(woman.long)
+            println(woman.long.toDouble())
+
+            // Add a marker on the map
+            val marker = LatLng(woman.lat.toDouble(), woman.long.toDouble())
+            mMap.addMarker(MarkerOptions().position(marker).title(woman.name))
+            markers.add(marker)
+
+        }
+        // Move the camera on the first marker
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(markers[0]))
+
     }
 }
