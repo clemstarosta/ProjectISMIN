@@ -45,7 +45,7 @@ export class WomanController {
 
   @Put('/:name')
   setFavoriteStation(@Param('name') name: string, @Body() elem: { fav: boolean }) : Woman{
-    this.womanService.setWomanFavorite(name, elem.fav)
+    this.womanService.setWomanFavorite(name, false)
     return this.womanService.getWoman(name);
   }
 
