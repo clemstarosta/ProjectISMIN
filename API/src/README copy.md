@@ -6,7 +6,7 @@ Clémence Starosta & Héloise Bellahcene
 #### This projet is deploy on Clever Cloud in 'ISMIN CS' - 'Women - CSHB'
 ## This project contains the following files
 
-- A `Woman` interface containing 7 string attributes:
+- A `CreateWomanFragment` class containing 7 string attributes:
   - `name` (string)
   - `category` (string)
   - `desc1` (string)
