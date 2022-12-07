@@ -16,10 +16,10 @@
 
         <Button
             android:id="@+id/buttonRetour"
-            android:layout_width="49dp"
-            android:layout_height="27dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="57dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="28dp"
             android:text="Retour"
             android:textSize="8sp"
             app:layout_constraintStart_toStartOf="parent"

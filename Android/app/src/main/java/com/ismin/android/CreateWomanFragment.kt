@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 
 /**
  * CreateWomanFragment
- * Gestion du fragment de création de la femme
+ * Management of the woman's creation fragment
  */
 
 class CreateWomanFragment : Fragment() {

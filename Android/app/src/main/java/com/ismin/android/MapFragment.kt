@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 private const val WOMEN = "women"
 
 /**
- *
+ * Map management fragment
  */
 class MapFragment : Fragment(), OnMapReadyCallback {
 

@@ -15,20 +15,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * CreatorActivity
- * Activité qui affiche l'écran de création d'une femme
+ * Activity that displays the screen for creating a woman
  */
 
 class CreatorActivity : AppCompatActivity(), WomanCreator {
 
     private val womenList = WomenList()
+    lateinit var Retour : Button
 
     private val retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(SERVER_BASE_URL)
         .build()
-
-    //Declaration de mon bouton
-    lateinit var Retour : Button
 
     private val womanService = retrofit.create(WomanService::class.java)
     @SuppressLint("MissingInflatedId")
@@ -36,17 +34,17 @@ class CreatorActivity : AppCompatActivity(), WomanCreator {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creator)
 
-        //Bouton de retour à l'activité principale
+        //Back to main activity button
         Retour = findViewById(R.id.buttonRetour)
 
-        // creation de l'intent de retour
+        // creation of the return intent
         val monIntentRetour : Intent =  Intent(this,MainActivity::class.java)
 
         Retour.setOnClickListener {
             startActivity(monIntentRetour)
         }
 
-        //fragment de création d'une femme
+        //fragment of a woman's creation
         val createWomanFragment = CreateWomanFragment.newInstance()
         supportFragmentManager.beginTransaction()
             .replace(R.id.a_creator_frame_layout, createWomanFragment)
@@ -57,7 +55,7 @@ class CreatorActivity : AppCompatActivity(), WomanCreator {
     override fun onWomanCreated(woman: Woman) {
         /**
          * onWomanCreated
-         * Création d'une femme
+         * Creation of a woman
          */
 
         womanService.addWoman(woman)

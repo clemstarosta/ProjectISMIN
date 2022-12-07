@@ -101,6 +101,10 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack {
     }
 
     override fun onMoreDetail(woman: Woman){
+        /**
+         * onMoreCreated
+         * Starts the Detail activity and sends the necessary parameters
+         */
         val monIntent : Intent =  Intent(this,InfoDetailActivity::class.java)
         monIntent.putExtra("desc1", woman.desc1)
         monIntent.putExtra("desc2", woman.desc2)
@@ -168,6 +172,4 @@ class MainActivity : AppCompatActivity(), WomanCreator , ListCallBack {
             }
         })
     }
-
 }
-
