@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { Woman } from './Woman';
-import { readFile } from 'fs/promises';
 import { HttpService } from '@nestjs/axios/dist';
 import { map, tap } from 'rxjs';
 import { ApiWoman } from './ApiWoman';
@@ -63,11 +62,11 @@ export class WomanService {
     }
 
     setWomanFavorite(name: string, fav: boolean) {
-      const nam = this.storedWomen.find((woman) => woman.name === name);
-      if (nam == null) {
+      const woman = this.storedWomen.find((woman) => woman.name === name);
+      if (woman == null) {
         return null
       }
-      this.storedWomen[name].fav =fav;
+      this.storedWomen[woman.name].fav =fav;
     }
   
     //Renvoie toutes les descriptions d'une femme à l'aide de son nom
