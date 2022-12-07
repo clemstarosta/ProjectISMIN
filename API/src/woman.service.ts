@@ -63,9 +63,6 @@ export class WomanService {
 
     setWomanFavorite(name: string, fav: boolean) {
       const woman = this.storedWomen.find((woman) => woman.name === name);
-      if (woman == null) {
-        return null
-      }
       this.storedWomen[woman.name].fav =fav;
     }
   
