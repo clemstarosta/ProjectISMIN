@@ -37,7 +37,7 @@ export class WomanController {
     return this.womanService.getWoman(name);
   }
 
-  //Return a descrpition of a woman using her name
+  //Return a descripition of a woman using her name
   @Get(':name/desc')
   getWomanDescr(@Param('name') name: string): String[] {
     return this.womanService.getDescriptionOf(name);
@@ -45,7 +45,7 @@ export class WomanController {
 
   @Put(':name')
   setFavoriteStation(@Param('name') name: string, @Body() elem: { fav: boolean }) : Woman{
-    this.womanService.setWomanFavorite(name, elem.fav)
+    this.womanService.setWomanFavorite(name, false)
     return this.womanService.getWoman(name);
   }
 
