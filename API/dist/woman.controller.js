@@ -33,6 +33,10 @@ let WomanController = class WomanController {
     getWomanDescr(name) {
         return this.womanService.getDescriptionOf(name);
     }
+    setFavoriteStation(name, fav) {
+        this.womanService.setWomanFavorite(name, fav);
+        return this.womanService.getWoman(name);
+    }
     deleteWoman(name) {
         return this.womanService.removeWoman(name);
     }
@@ -64,6 +68,14 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Array)
 ], WomanController.prototype, "getWomanDescr", null);
+__decorate([
+    (0, common_1.Put)(':name'),
+    __param(0, (0, common_1.Param)('name')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Boolean]),
+    __metadata("design:returntype", Object)
+], WomanController.prototype, "setFavoriteStation", null);
 __decorate([
     (0, common_1.Delete)(':name'),
     __param(0, (0, common_1.Param)('name')),

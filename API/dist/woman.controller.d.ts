@@ -8,5 +8,6 @@ export declare class WomanController {
     createWoman(womanToCreate: WomanDto): Woman;
     getWomanByName(name: string): Woman;
     getWomanDescr(name: string): String[];
+    setFavoriteStation(name: string, fav: boolean): Woman;
     deleteWoman(name: string): void;
 }

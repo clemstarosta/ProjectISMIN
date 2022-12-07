@@ -39,6 +39,7 @@ let WomanService = class WomanService {
                     place: e.place,
                     category: e.category,
                     thumb_url: e.thumb_url,
+                    fav: false,
                 });
             });
         }))
@@ -55,6 +56,10 @@ let WomanService = class WomanService {
             throw new Error(`No woman with name ${name}`);
         }
         return woman;
+    }
+    setWomanFavorite(name, fav) {
+        const woman = this.storedWomen.find((woman) => woman.name === name);
+        this.storedWomen[woman.name].fav = fav;
     }
     getDescriptionOf(name) {
         const woman = this.getWoman(name);

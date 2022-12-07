@@ -24,6 +24,7 @@ class WomanDto {
         this.long = long;
         this.lat = lat;
         this.thumb_url = thumb_url;
+        this.fav = false;
     }
 }
 __decorate([

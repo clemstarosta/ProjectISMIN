@@ -8,6 +8,7 @@ export declare class WomanService {
     loadWomenFromAPI(): Promise<void>;
     addWoman(woman: Woman): void;
     getWoman(name: string): Woman;
+    setWomanFavorite(name: string, fav: boolean): void;
     getDescriptionOf(name: string): string[];
     getAllWomen(): Woman[];
     getTotalNumberOfWomen(): number;
