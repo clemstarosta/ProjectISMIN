@@ -38,6 +38,7 @@ export class WomanService {
               place: e.place,
               category: e.category,
               thumb_url: e.thumb_url,
+              fav: false,
             });
           });
         }),
@@ -59,6 +60,14 @@ export class WomanService {
         throw new Error(`No woman with name ${name}`);
       }
       return woman;
+    }
+
+    setWomanFavorite(name: string, fav: boolean) {
+      const nam = this.storedWomen.find((woman) => woman.name === name);
+      if (nam == null) {
+        return null
+      }
+      this.storedWomen[name].fav =fav;
     }
   
     //Renvoie toutes les descriptions d'une femme à l'aide de son nom

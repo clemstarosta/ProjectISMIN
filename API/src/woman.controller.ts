@@ -2,11 +2,10 @@ import {
   Body,
   Controller,
   Delete,
-  HttpCode,
   Get,
   Param,
   Post,
-  Query,
+  Put
 } from '@nestjs/common';
 import { WomanService } from './woman.service';
 import { Woman } from './Woman';
@@ -42,6 +41,12 @@ export class WomanController {
   @Get(':name/desc')
   getWomanDescr(@Param('name') name: string): String[] {
     return this.womanService.getDescriptionOf(name);
+  }
+
+  @Put('/:name')
+  setFavoriteStation(@Param('name') name: string, @Body() elem: { fav: boolean }) : Woman{
+    this.womanService.setWomanFavorite(name, elem.fav)
+    return this.womanService.getWoman(name);
   }
 
   //Delete a woman by her name

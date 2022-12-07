@@ -10,4 +10,5 @@ export interface Woman {
   long: number;
   lat: number;
   thumb_url: string;
+  fav: boolean;
 }
