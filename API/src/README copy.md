@@ -33,6 +33,7 @@ A `woman.controller` receives and processes requests
   - ` Post - createWoman` Adding a new woman to the API
   - ` Get - WomanByName` Return a woman according to her name
   - ` Get - getWomanDescr` Return a description of a woman using her name
+  - ` Put - setFavoriteStation` adding a woman as a favorite
   - ` Delete - DeleteWoman` Delete a woman by her name
 
 A `woman.service` classes containing
@@ -42,6 +43,7 @@ A `woman.service` classes containing
   - `getDescriptionOf(name: string)` returning an array of `Description`s
   - `getAllWomen()` returning an array of `Woman`s
   - `getTotalNumberOfWomen()` returning a number
+  - `setWomanFavorite()` Changes the status of a woman's favorite
   - `removeWoman(name: string)`
 
 A `woman.module` Links all Nest components
@@ -59,12 +61,6 @@ npm install
 # This will build the source and put the transpiled code in `/dist` directory
 npm run build
 
-# This will committed the project
-git add .
-git commit -m "new"
-
-# This will added new features to clever cloud
-git push clever main:master
 
 # This will start the API 
 npm run start:dev

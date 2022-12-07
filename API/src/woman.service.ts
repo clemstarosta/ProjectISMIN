@@ -61,6 +61,7 @@ export class WomanService {
       return woman;
     }
 
+    //Change le statut de favori de la femme
     setWomanFavorite(name: string, fav: boolean) {
       const woman = this.storedWomen.find((woman) => woman.name === name);
       this.storedWomen[woman.name].fav =fav;
